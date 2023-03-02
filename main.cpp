@@ -1,24 +1,24 @@
 #include <iostream>
-
-#include "Node.h"
+#include "List.h"
 
 int main()
 {
-  Node *n1;
-  Node *n2;
-  Node *n3;
-
-  n1 = new Node("Hello");
-  n2 = new Node("World");
-
-  n1->setNext(n2);
-  
-  n3 = new Node("middle",n1->getNext());
-  n3->setNext(n3);
-  n1->getNext()->getNext()->setNext(new Node("!"));
-  
-  std::cout << n1->getData()<<"\n";
-  std::cout << n2->getData()<<"\n";
-  std::cout << n1->getNext()->getData()<<"\n";
+  List *l = new List();
+  std::cout << l->toString() << " " << l->length() << "\n";
+  l->insert(0,"a");
+  std::cout << l->toString() << " " << l->length() << "\n";
+  l->insert(0,"b");
+  l->insert(0,"c");
+  l->insert(0,"d");
+  try {
+    l->insert(10,"x");
+  } catch (std::exception e){
+    std::cout << "Insert x didn't work\n";
+  }
+  std::cout << l->toString() << "\n";
+  l->insert(2,"inserted at 2");
+  std::cout << l->toString() << "\n";
+  l->insert(5,"inserted at end");
+  std::cout << l->toString() << " " << l->length() << "\n";
   return 0;
 }
