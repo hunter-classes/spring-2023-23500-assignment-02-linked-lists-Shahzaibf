@@ -14,6 +14,7 @@ class List{
 
   std::string toString(); // for testing purposes
     bool contains(std::string item);
+    void remove(int loc);
   /*
     Try to complete for Monday:
     

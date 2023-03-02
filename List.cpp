@@ -100,3 +100,7 @@ bool List::contains(std::string item){
     }
     return false;
 }
+
+void List::remove(int loc){
+    
+}
