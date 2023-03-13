@@ -26,4 +26,4 @@ OList.o: OList.cpp OList.h Node.h
 
 
 clean:
-	rm -rf *.o main tests
+	rm -f *.o main tests
